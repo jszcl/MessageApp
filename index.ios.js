@@ -25,7 +25,8 @@ import {
 
 import {StackNavigator} from 'react-navigation';
 import {TabNavigator}   from 'react-navigation';
-import HomeScreen from './components/HomeScreen'
+import HomeScreen from './components/HomeScreen';
+import ChatScreen from './components/ChatScreen'
 
 
 
@@ -72,42 +73,7 @@ class LoginScreen extends React.Component {
 }
 
 
-class ChatScreen extends React.Component {
-    static navigationOptions = {
-        tabBar: {
-            label: '故障报修',
-            icon: ({tintcolor}) => (
-                <Image source={require('./img/tool.png')} style={[{tintcolor:tintcolor}]}/>
-            )
-        },
-        title: '故障报修'
-    };
 
-    render() {
-        return (
-            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <View >
-                    <Text>请填写报修信息</Text>
-                    <View
-                        style={{height: 40,width:80}}
-
-
-                    />
-                    <Text>设备类型</Text>
-                    <TextInput style={styles.inputs} placeholder='设备类型'/>
-                    <Text>联系人</Text>
-                    <TextInput style={styles.inputs} placeholder='联系人'/>
-                    <Text>联系人电话</Text>
-                    <TextInput keyboardType="numeric" style={styles.inputs} placeholder='联系人电话'/>
-                    <Text>故障说明</Text>
-                    <TextInput style={{height:160,width:500, borderColor:'gray',borderWidth:0.5}} placeholder='故障说明'/>
-                    <View>
-                        <Button title='提交' onPress={()=>alert('已提交')}/>
-                    </View>
-                </View></TouchableWithoutFeedback>
-        );
-    }
-}
 
 class ScoreScreen extends React.Component {
     static navigationOptions = {
